@@ -25,6 +25,7 @@ endif
 AM_CPPFLAGS = \
 	-DVERSION=\"$(VERSION)\" \
 	-DDATADIR=\"$(PIDGIN_DATADIR)\" \
+	-fvisibility=hidden \
 	$(BINRELOC_CFLAGS) \
 	$(DEBUG_CFLAGS) \
 	$(GTK_CFLAGS) \
