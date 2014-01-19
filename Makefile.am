@@ -1,0 +1,9 @@
+EXTRA_DIST = \
+	AUTHORS \
+	COPYING \
+	INSTALL \
+	NEWS \
+	README
+
+SUBDIRS = src
+
