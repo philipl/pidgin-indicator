@@ -64,6 +64,8 @@ static gboolean visibility_manager = FALSE;
 
 static GtkCheckMenuItem *item_blist = NULL;
 static GtkWidget *item_unread = NULL;
+static GtkWidget *item_new_im = NULL;
+static GtkWidget *item_join_chat = NULL;
 static GtkWidget *item_status = NULL;
 static GtkWidget *item_mute = NULL;
 static GtkWidget *item_blink = NULL;
@@ -258,6 +260,9 @@ docklet_update_status(void)
 
 	docklet_build_unread(item_unread);
 	docklet_status_submenu(item_status);
+
+	gtk_widget_set_sensitive(item_new_im, status != PURPLE_STATUS_OFFLINE);
+	gtk_widget_set_sensitive(item_join_chat, status != PURPLE_STATUS_OFFLINE && enable_join_chat);
 
 	return FALSE; /* for when we're called by the glib idle handler */
 }
@@ -743,14 +748,21 @@ docklet_menu(void)
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	item_unread = menuitem;
 
-	menuitem = pidgin_new_item_from_stock(menu, _("New _Message..."), PIDGIN_STOCK_TOOLBAR_MESSAGE_NEW, G_CALLBACK(pidgin_dialogs_im), NULL, 0, 0, NULL);
-	if (status == PURPLE_STATUS_OFFLINE)
-		gtk_widget_set_sensitive(menuitem, FALSE);
+	pidgin_separator(menu);
 
-	menuitem = pidgin_new_item_from_stock(menu, _("Join Chat..."), PIDGIN_STOCK_CHAT,
-			G_CALLBACK(pidgin_blist_joinchat_show), NULL, 0, 0, NULL);
+	menuitem = gtk_menu_item_new_with_mnemonic(_("New _Message..."));
+	g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(pidgin_dialogs_im), NULL);
 	if (status == PURPLE_STATUS_OFFLINE)
 		gtk_widget_set_sensitive(menuitem, FALSE);
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+	item_new_im = menuitem;
+
+	menuitem = gtk_menu_item_new_with_mnemonic(_("Join Chat..."));
+	g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(pidgin_blist_joinchat_show), NULL);
+	if (status == PURPLE_STATUS_OFFLINE)
+		gtk_widget_set_sensitive(menuitem, FALSE);
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+	item_join_chat = menuitem;
 
 	menuitem = gtk_menu_item_new_with_mnemonic(_("_Change Status"));
 	docklet_status_submenu(menuitem);
