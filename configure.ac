@@ -32,7 +32,7 @@ LIBTOOL="$LIBTOOL --silent"
 #
 AC_PROG_INTLTOOL
 
-GETTEXT_PACKAGE=guifications
+GETTEXT_PACKAGE=pidgin-indicator
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, ["$GETTEXT_PACKAGE"], [Define the gettext package to be used.])
 
