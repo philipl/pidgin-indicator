@@ -673,7 +673,7 @@ docklet_plugin_actions(GtkWidget *menu)
 		pidgin_separator(menu);
 }
 
-static void
+GtkWidget *
 docklet_menu(void)
 {
 	static GtkWidget *menu = NULL;
@@ -755,9 +755,13 @@ docklet_menu(void)
 	g_signal_connect(menu, "enter-notify-event", G_CALLBACK(docklet_menu_leave_enter), NULL);
 #endif
 	gtk_widget_show_all(menu);
+#if 0
 	gtk_menu_popup(GTK_MENU(menu), NULL, NULL,
 		       ui_ops->position_menu,
 		       NULL, 0, gtk_get_current_event_time());
+#else
+	return menu;
+#endif
 }
 
 /**************************************************************************
