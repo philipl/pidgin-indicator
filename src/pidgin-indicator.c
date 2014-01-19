@@ -10,7 +10,6 @@
 #include <eventloop.h>
 #include <gtkblist.h>
 #include <gtkdialogs.h>
-#include <gtkdocklet.h>
 #include <gtkplugin.h>
 #include <gtksavedstatuses.h>
 #include <gtkstatusbox.h>
@@ -23,12 +22,9 @@
 
 #include <libappindicator/app-indicator.h>
 
-static AppIndicator *sIndicator = NULL;
+#include "docklet.h"
 
-GtkWidget *docklet_menu(void);
-void indicator_docklet_init(PurplePlugin *plugin);
-void indicator_docklet_uninit(PurplePlugin *plugin);
-void indicator_docklet_set_ui_ops(struct docklet_ui_ops *ops);
+static AppIndicator *sIndicator = NULL;
 
 static void
 indicator_update_icon(PurpleStatusPrimitive status, gboolean connecting, gboolean pending) {
@@ -69,20 +65,15 @@ static void indicator_blank_icon(void) {
   app_indicator_set_icon(sIndicator, PIDGIN_STOCK_TRAY_AVAILABLE);
 }
 
-static struct docklet_ui_ops ui_ops =
+static struct indicator_docklet_ui_ops ui_ops =
 {
-  NULL,
-  NULL,
   indicator_update_icon,
   indicator_blank_icon,
-  NULL,
-  NULL
 };
 
 static gboolean
 indicator_load(PurplePlugin *plugin) {
-  indicator_docklet_init(plugin);
-  pidgin_docklet_set_ui_ops(&ui_ops);
+  indicator_docklet_init(plugin, &ui_ops);
 
   AppIndicator *indicator =
     app_indicator_new_with_path("pidgin", PIDGIN_STOCK_TRAY_AVAILABLE,

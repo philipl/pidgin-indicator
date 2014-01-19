@@ -45,15 +45,17 @@
 #include "gtkstatusbox.h"
 #include "gtkutils.h"
 #include "pidginstock.h"
-#include "gtkdocklet.h"
+//#include "gtkdocklet.h"
 #include "gtkdialogs.h"
+
+#include "docklet.h"
 
 #ifndef DOCKLET_TOOLTIP_LINE_LIMIT
 #define DOCKLET_TOOLTIP_LINE_LIMIT 5
 #endif
 
 /* globals */
-static struct docklet_ui_ops *ui_ops = NULL;
+static struct indicator_docklet_ui_ops *ui_ops = NULL;
 static PurpleStatusPrimitive status = PURPLE_STATUS_OFFLINE;
 static gboolean pending = FALSE;
 static gboolean connecting = FALSE;
@@ -72,6 +74,13 @@ static GtkWidget *item_blink = NULL;
 /**************************************************************************
  * docklet status and utility functions
  **************************************************************************/
+static void
+indicator_docklet_update_icon()
+{
+	if (ui_ops && ui_ops->update_icon)
+		ui_ops->update_icon(status, connecting, pending);
+}
+
 static gboolean
 docklet_blink_icon(gpointer data)
 {
@@ -85,7 +94,7 @@ docklet_blink_icon(gpointer data)
 			if (ui_ops && ui_ops->blank_icon)
 				ui_ops->blank_icon();
 		} else {
-			pidgin_docklet_update_icon();
+			indicator_docklet_update_icon();
 		}
 		ret = TRUE; /* keep blinking */
 	} else {
@@ -153,7 +162,6 @@ static gboolean
 docklet_update_status(void)
 {
 	GList *convs, *l;
-	int count;
 	PurpleSavedStatus *saved_status;
 	PurpleStatusPrimitive newstatus = PURPLE_STATUS_OFFLINE;
 	gboolean newpending = FALSE, newconnecting = FALSE;
@@ -164,17 +172,6 @@ docklet_update_status(void)
 	/* determine if any ims have unseen messages */
 	convs = get_pending_list(DOCKLET_TOOLTIP_LINE_LIMIT);
 
-	if (!strcmp(purple_prefs_get_string(PIDGIN_PREFS_ROOT "/docklet/show"), "pending")) {
-		if (convs && ui_ops->create && !visible) {
-			g_list_free(convs);
-			ui_ops->create();
-			return FALSE;
-		} else if (!convs && ui_ops->destroy && visible) {
-			ui_ops->destroy();
-			return FALSE;
-		}
-	}
-
 	if (!visible) {
 		g_list_free(convs);
 		return FALSE;
@@ -183,45 +180,7 @@ docklet_update_status(void)
 	if (convs != NULL) {
 		newpending = TRUE;
 
-		/* set tooltip if messages are pending */
-		if (ui_ops->set_tooltip) {
-			GString *tooltip_text = g_string_new("");
-			for (l = convs, count = 0 ; l != NULL ; l = l->next, count++) {
-				PurpleConversation *conv = (PurpleConversation *)l->data;
-				PidginConversation *gtkconv = PIDGIN_CONVERSATION(conv);
-
-				if (count == DOCKLET_TOOLTIP_LINE_LIMIT - 1) {
-					g_string_append(tooltip_text, _("Right-click for more unread messages...\n"));
-				} else if(gtkconv) {
-					g_string_append_printf(tooltip_text,
-						ngettext("%d unread message from %s\n", "%d unread messages from %s\n", gtkconv->unseen_count),
-						gtkconv->unseen_count,
-						purple_conversation_get_title(conv));
-				} else {
-					g_string_append_printf(tooltip_text,
-						ngettext("%d unread message from %s\n", "%d unread messages from %s\n",
-						GPOINTER_TO_INT(purple_conversation_get_data(conv, "unseen-count"))),
-						GPOINTER_TO_INT(purple_conversation_get_data(conv, "unseen-count")),
-						purple_conversation_get_title(conv));
-				}
-			}
-
-			/* get rid of the last newline */
-			if (tooltip_text->len > 0)
-				tooltip_text = g_string_truncate(tooltip_text, tooltip_text->len - 1);
-
-			ui_ops->set_tooltip(tooltip_text->str);
-
-			g_string_free(tooltip_text, TRUE);
-		}
-
 		g_list_free(convs);
-
-	} else if (ui_ops->set_tooltip) {
-		char *tooltip_text = g_strconcat(PIDGIN_NAME, " - ",
-			purple_savedstatus_get_title(saved_status), NULL);
-		ui_ops->set_tooltip(tooltip_text);
-		g_free(tooltip_text);
 	}
 
 	for(l = purple_accounts_get_all(); l != NULL; l = l->next) {
@@ -246,7 +205,7 @@ docklet_update_status(void)
 		pending = newpending;
 		connecting = newconnecting;
 
-		pidgin_docklet_update_icon();
+		indicator_docklet_update_icon();
 
 		/* and schedule the blinker function if messages are pending */
 		if (purple_prefs_get_bool(PIDGIN_PREFS_ROOT "/docklet/blink")
@@ -828,14 +787,10 @@ docklet_menu(void)
  * public api for ui_ops
  **************************************************************************/
 void
-indicator_docklet_set_ui_ops(struct docklet_ui_ops *ops)
+indicator_docklet_init(PurplePlugin *plugin, struct indicator_docklet_ui_ops *ops)
 {
 	ui_ops = ops;
-}
 
-void
-indicator_docklet_init(PurplePlugin *plugin)
-{
 	void *blist_handle = pidgin_blist_get_handle();
 	void *conn_handle = purple_connections_get_handle();
 	void *conv_handle = purple_conversations_get_handle();
@@ -876,7 +831,4 @@ indicator_docklet_uninit(PurplePlugin *plugin)
 {
 	purple_prefs_disconnect_by_handle(plugin->handle);
 	purple_signals_disconnect_by_handle(plugin->handle);
-
-	if (visible && ui_ops && ui_ops->destroy)
-		ui_ops->destroy();
 }
