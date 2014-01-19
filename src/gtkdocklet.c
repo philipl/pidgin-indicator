@@ -60,7 +60,6 @@ static gboolean connecting = FALSE;
 static gboolean enable_join_chat = FALSE;
 static guint docklet_blinking_timer = 0;
 static gboolean visible = TRUE;
-static gboolean visibility_manager = FALSE;
 
 static GtkCheckMenuItem *item_blist = NULL;
 static GtkWidget *item_unread = NULL;
@@ -228,7 +227,6 @@ docklet_update_status(void)
 	for(l = purple_accounts_get_all(); l != NULL; l = l->next) {
 
 		PurpleAccount *account = (PurpleAccount*)l->data;
-		PurpleStatus *account_status;
 
 		if (!purple_account_get_enabled(account, PIDGIN_UI))
 			continue;
@@ -236,7 +234,6 @@ docklet_update_status(void)
 		if (purple_account_is_disconnected(account))
 			continue;
 
-		account_status = purple_account_get_active_status(account);
 		if (purple_account_is_connecting(account))
 			newconnecting = TRUE;
 	}
@@ -716,7 +713,15 @@ docklet_plugin_actions(GtkWidget *menu)
 static void
 docklet_activate_cb(void)
 {
-  pidgin_docklet_clicked(1);
+	if (pending) {
+		GList *l = get_pending_list(1);
+		if (l != NULL) {
+			pidgin_conv_present_conversation((PurpleConversation *)l->data);
+			g_list_free(l);
+		}
+	} else {
+		pidgin_blist_toggle_visibility();
+	}
 }
 
 static void
@@ -823,74 +828,9 @@ docklet_menu(void)
  * public api for ui_ops
  **************************************************************************/
 void
-pidgin_docklet_update_icon()
-{
-	if (ui_ops && ui_ops->update_icon)
-		ui_ops->update_icon(status, connecting, pending);
-}
-
-void
-pidgin_docklet_clicked(int button_type)
-{
-	switch (button_type) {
-		case 1:
-			if (pending) {
-				GList *l = get_pending_list(1);
-				if (l != NULL) {
-					pidgin_conv_present_conversation((PurpleConversation *)l->data);
-					g_list_free(l);
-				}
-			} else {
-				pidgin_blist_toggle_visibility();
-			}
-			break;
-		case 3:
-			docklet_menu();
-			break;
-	}
-}
-
-void
-pidgin_docklet_embedded()
-{
-	if (!visibility_manager
-	    && strcmp(purple_prefs_get_string(PIDGIN_PREFS_ROOT "/docklet/show"), "pending")) {
-		pidgin_blist_visibility_manager_add();
-		visibility_manager = TRUE;
-	}
-	visible = TRUE;
-	docklet_update_status();
-	pidgin_docklet_update_icon();
-}
-
-void
-pidgin_docklet_remove()
-{
-	if (visible) {
-		if (visibility_manager) {
-			pidgin_blist_visibility_manager_remove();
-			visibility_manager = FALSE;
-		}
-		if (docklet_blinking_timer) {
-			g_source_remove(docklet_blinking_timer);
-			docklet_blinking_timer = 0;
-		}
-		visible = FALSE;
-		status = PURPLE_STATUS_OFFLINE;
-	}
-}
-
-void
-pidgin_docklet_set_ui_ops(struct docklet_ui_ops *ops)
+indicator_docklet_set_ui_ops(struct docklet_ui_ops *ops)
 {
 	ui_ops = ops;
-}
-
-void*
-pidgin_docklet_get_handle()
-{
-	static int i;
-	return &i;
 }
 
 void

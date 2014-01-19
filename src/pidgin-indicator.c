@@ -28,6 +28,7 @@ static AppIndicator *sIndicator = NULL;
 GtkWidget *docklet_menu(void);
 void indicator_docklet_init(PurplePlugin *plugin);
 void indicator_docklet_uninit(PurplePlugin *plugin);
+void indicator_docklet_set_ui_ops(struct docklet_ui_ops *ops);
 
 static void
 indicator_update_icon(PurpleStatusPrimitive status, gboolean connecting, gboolean pending) {
