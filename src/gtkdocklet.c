@@ -719,6 +719,12 @@ docklet_activate_cb(void)
   pidgin_docklet_clicked(1);
 }
 
+static void
+docklet_quit_cb(void)
+{
+  purple_timeout_add(0, purple_core_quit_cb, NULL);
+}
+
 GtkWidget *
 docklet_menu(void)
 {
@@ -797,7 +803,7 @@ docklet_menu(void)
 	// XXX: Make this update when appropriate
 	docklet_plugin_actions(menu);
 
-	pidgin_new_item_from_stock(menu, _("_Quit"), GTK_STOCK_QUIT, G_CALLBACK(purple_core_quit), NULL, 0, 0, NULL);
+	pidgin_new_item_from_stock(menu, _("_Quit"), GTK_STOCK_QUIT, G_CALLBACK(docklet_quit_cb), NULL, 0, 0, NULL);
 
 #ifdef _WIN32
 	g_signal_connect(menu, "leave-notify-event", G_CALLBACK(docklet_menu_leave_enter), NULL);
