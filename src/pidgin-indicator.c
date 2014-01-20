@@ -104,7 +104,7 @@ indicator_load(PurplePlugin *plugin) {
   sIndicator = indicator;
 
   app_indicator_set_status(indicator, APP_INDICATOR_STATUS_ACTIVE);
-  app_indicator_set_icon(indicator, PIDGIN_STOCK_TRAY_AVAILABLE);
+  app_indicator_set_icon(indicator, PIDGIN_STOCK_TRAY_OFFLINE);
 
   GtkMenu *menu = GTK_MENU(docklet_menu());
   GList *items = gtk_container_get_children(GTK_CONTAINER(menu));
