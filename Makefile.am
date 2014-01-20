@@ -5,5 +5,5 @@ EXTRA_DIST = \
 	NEWS \
 	README
 
-SUBDIRS = src
+SUBDIRS = src po
 
