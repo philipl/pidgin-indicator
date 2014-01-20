@@ -1,0 +1,12 @@
+pidgin-indicator: Ubuntu Indicator Plugin for Pidgin
+====================================================
+
+0.5 (2014-01-14):
+-----------------
+
+Initial release.
+
+Fully functional, with one exception:
+* Plugin Action menu items are not refreshed.
+  You must restart pidgin or reload the plugin
+  to update these menu items.
