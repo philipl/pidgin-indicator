@@ -1,0 +1,37 @@
+pidgin-indicator: Ubuntu Indicator Plugin for Pidgin
+====================================================
+
+This plugin provides an Ubuntu Indicator icon, for use in the Unity desktop
+environment. Unity no longer provides a general purpose notification tray,
+so the standard Pidgin tray icon does not appear. The official Ubuntu
+alternative is an integration with their Messaging indicator, which
+consolidates status from multiple applications. I've found this indicator to
+be much less usable than the original Pidgin tray icon, so I decided to
+build this plugin to restore the icon's functionality in a maintainable
+way (in constrat to having to run a patched version of Unity).
+
+Functionality
+-------------
+
+The indicator provides all the same functionality as the original tray icon,
+but not in exactly the same way.
+
+* The 'smart' click behaviour that either shows the buddy list or unread
+  messages is now activated by a middle-click - because left click on an
+  indicator always opens the menu.
+* Due to how indicators work, the middle-click action must also be a menu
+  item, so it's the new Show/Hide item at the top of the menu.
+* Due to indicator limitations, some of the special icons can't be shown
+  next to menu items any more.
+
+Required packages
+-----------------
+
+Runtime:
+* pidgin 2.10.x
+* libappindicator-0.1
+
+Buildtime:
+* build-essential
+* pidgen-dev
+* libappindicator-dev
