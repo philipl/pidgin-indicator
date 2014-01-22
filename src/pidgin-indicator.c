@@ -165,7 +165,7 @@ static void
 init_plugin(PurplePlugin *plugin) {
   info.name = _("Ubuntu Indicator");
   info.summary = _("Indicator icon for Ubuntu Unity");
-  info.description = ("Show a Unity Indicator icon in Ubuntu");
+  info.description = _("Show a Unity Indicator icon in Ubuntu");
 }
 
 #pragma GCC visibility push(default)
