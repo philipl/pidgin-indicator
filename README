@@ -8,7 +8,7 @@ alternative is an integration with their Messaging indicator, which
 consolidates status from multiple applications. I've found this indicator to
 be much less usable than the original Pidgin tray icon, so I decided to
 build this plugin to restore the icon's functionality in a maintainable
-way (in constrat to having to run a patched version of Unity).
+way (in contrast to having to run a patched version of Unity).
 
 Functionality
 -------------
@@ -33,5 +33,5 @@ Runtime:
 
 Buildtime:
 * build-essential
-* pidgen-dev
+* pidgin-dev
 * libappindicator-dev
