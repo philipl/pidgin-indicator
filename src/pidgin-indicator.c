@@ -142,10 +142,10 @@ static PurplePluginInfo info = {
   NULL,
   PURPLE_PRIORITY_DEFAULT,
   "gtk-philipl-indicator",
-  "Ubuntu Indicator",
+  NULL, // Localised below
   VERSION,
-  "Indicator icon for Ubuntu Unity",
-  "Show a Unity Indicator icon in Ubuntu",
+  NULL, // Localised below
+  NULL, // Localised below
   "Philip Langdale <philipl@overt.org>",
   "https://github.com/philipl/pidgin-indicator",
   indicator_load,
@@ -163,6 +163,9 @@ static PurplePluginInfo info = {
 
 static void
 init_plugin(PurplePlugin *plugin) {
+  info.name = _("Ubuntu Indicator");
+  info.summary = _("Indicator icon for Ubuntu Unity");
+  info.description = ("Show a Unity Indicator icon in Ubuntu");
 }
 
 #pragma GCC visibility push(default)
