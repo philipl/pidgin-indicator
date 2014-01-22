@@ -1,0 +1,94 @@
+# German translations for pidgin-indicator package.
+# Copyright (C) 2014 Listed translators
+# This file is distributed under the same license as the pidgin-indicator package.
+# Christian Schendel <doppelhelix@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pidgin-indicator\n"
+"Report-Msgid-Bugs-To: Philip Langdale <philipl@overt.org>\n"
+"POT-Creation-Date: 2014-01-22 12:20+0100\n"
+"PO-Revision-Date: 2014-01-22 12:42+0100\n"
+"Last-Translator: Christian Schendel <doppelhelix@gmail.com>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/gtkdocklet.c:550
+msgid "Available"
+msgstr "Verfügbar"
+
+#: ../src/gtkdocklet.c:554
+msgid "Away"
+msgstr "Abwesend"
+
+#: ../src/gtkdocklet.c:558
+msgid "Do not disturb"
+msgstr "Nicht stören"
+
+#: ../src/gtkdocklet.c:562
+msgid "Invisible"
+msgstr "Unsichtbar"
+
+#: ../src/gtkdocklet.c:566
+msgid "Offline"
+msgstr "Abgemeldet"
+
+#: ../src/gtkdocklet.c:587
+msgid "New..."
+msgstr "Neu..."
+
+#: ../src/gtkdocklet.c:588
+msgid "Saved..."
+msgstr "Gespeichert"
+
+#: ../src/gtkdocklet.c:704
+msgid "_Show/Hide"
+msgstr "_Zeigen/Verstecken"
+
+#: ../src/gtkdocklet.c:710
+msgid "Show Buddy _List"
+msgstr "Zeige _Kontaktliste"
+
+#: ../src/gtkdocklet.c:716
+msgid "_Unread Messages"
+msgstr "_Ungelesene Sofortnachrichten"
+
+#: ../src/gtkdocklet.c:723
+msgid "New _Message..."
+msgstr "_Neue Sofortnachricht..."
+
+#: ../src/gtkdocklet.c:730
+msgid "Join Chat..."
+msgstr "Einen _Chat betreten"
+
+#: ../src/gtkdocklet.c:737
+msgid "_Change Status"
+msgstr "Status _wechseln"
+
+#: ../src/gtkdocklet.c:744
+msgid "_Accounts"
+msgstr "K_onten"
+
+#: ../src/gtkdocklet.c:745
+msgid "Plu_gins"
+msgstr "Erwe_iterungen"
+
+#: ../src/gtkdocklet.c:746
+msgid "Pr_eferences"
+msgstr "_Einstellungen"
+
+#: ../src/gtkdocklet.c:750
+msgid "Mute _Sounds"
+msgstr "S_tumm schalten"
+
+#: ../src/gtkdocklet.c:758
+msgid "_Blink on New Message"
+msgstr "Bei neuen Nachrichten _blinken"
+
+#: ../src/gtkdocklet.c:770
+msgid "_Quit"
+msgstr "_Beenden"
