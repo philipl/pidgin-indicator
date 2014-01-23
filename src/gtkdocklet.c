@@ -142,7 +142,7 @@ docklet_build_unread(GtkWidget *menuitem) {
 				"status indicates messages pending, but no conversations with unseen messages were found.");
 		} else {
 			GtkWidget *submenu = gtk_menu_new();
-			pidgin_conversations_fill_menu(submenu, l);
+			docklet_conversations_fill_menu(submenu, l);
 			g_list_free(l);
 			gtk_widget_set_sensitive(menuitem, TRUE);
 			gtk_widget_show_all(submenu);
@@ -675,17 +675,7 @@ docklet_activate_cb(void)
 	if (pending) {
 		GList *l = get_pending_list(1);
 		if (l != NULL) {
-			PurpleConversation *conv = ((PurpleConversation *)l->data);
-
-			// Reimplement pidgin_conv_present_conversation so that we
-			// can switch to the conversation's tab, which is
-			// other-wise prevented by logic in Pidgin.
-			pidgin_conv_attach_to_conversation(conv);
-			PidginConversation *gtkconv = PIDGIN_CONVERSATION(conv);
-			pidgin_conv_switch_active_conversation(conv);
-			pidgin_conv_window_switch_gtkconv(gtkconv->win, gtkconv);
-			gtk_window_present(GTK_WINDOW(gtkconv->win->window));
-
+			docklet_conv_present_conversation((PurpleConversation *)l->data);
 			g_list_free(l);
 		}
 	} else {

@@ -83,16 +83,12 @@ void
 docklet_conv_present_conversation(PurpleConversation *conv)
 {
 	PidginConversation *gtkconv;
-	GdkModifierType state;
 
 	pidgin_conv_attach_to_conversation(conv);
 	gtkconv = PIDGIN_CONVERSATION(conv);
 
 	pidgin_conv_switch_active_conversation(conv);
-	/* Switch the tab only if the user initiated the event by pressing
-	 * a button or hitting a key. */
-	if (gtk_get_current_event_state(&state))
-		pidgin_conv_window_switch_gtkconv(gtkconv->win, gtkconv);
+	pidgin_conv_window_switch_gtkconv(gtkconv->win, gtkconv);
 	gtk_window_present(GTK_WINDOW(gtkconv->win->window));
 }
 
