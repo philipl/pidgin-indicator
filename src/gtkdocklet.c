@@ -675,7 +675,17 @@ docklet_activate_cb(void)
 	if (pending) {
 		GList *l = get_pending_list(1);
 		if (l != NULL) {
-			pidgin_conv_present_conversation((PurpleConversation *)l->data);
+			PurpleConversation *conv = ((PurpleConversation *)l->data);
+
+			// Reimplement pidgin_conv_present_conversation so that we
+			// can switch to the conversation's tab, which is
+			// other-wise prevented by logic in Pidgin.
+			pidgin_conv_attach_to_conversation(conv);
+			PidginConversation *gtkconv = PIDGIN_CONVERSATION(conv);
+			pidgin_conv_switch_active_conversation(conv);
+			pidgin_conv_window_switch_gtkconv(gtkconv->win, gtkconv);
+			gtk_window_present(GTK_WINDOW(gtkconv->win->window));
+
 			g_list_free(l);
 		}
 	} else {
