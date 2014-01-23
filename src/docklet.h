@@ -23,6 +23,8 @@
 #define _DOCKLET_H_
 
 #include <config.h>
+
+#include <conversation.h>
 #include <plugin.h>
 
 struct indicator_docklet_ui_ops
@@ -34,5 +36,8 @@ struct indicator_docklet_ui_ops
 GtkWidget *docklet_menu(void);
 void indicator_docklet_init(PurplePlugin *plugin, struct indicator_docklet_ui_ops *ops);
 void indicator_docklet_uninit(PurplePlugin *plugin);
+
+void docklet_conv_present_conversation(PurpleConversation *conv);
+guint docklet_conversations_fill_menu(GtkWidget *menu, GList *convs);
 
 #endif // _DOCKLET_H_

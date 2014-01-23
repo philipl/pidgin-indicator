@@ -32,6 +32,8 @@
 
 #include "pidgin.h"
 
+#include "docklet.h"
+
 #include "gtkconv.h"
 #include "gtkutils.h"
 #include "pidginstock.h"
@@ -76,8 +78,9 @@ pidgin_conv_get_icon_stock(PurpleConversation *conv)
 /**************************************************************************
  * End of the bunch of buddy icon functions
  **************************************************************************/
+
 void
-pidgin_conv_present_conversation(PurpleConversation *conv)
+docklet_conv_present_conversation(PurpleConversation *conv)
 {
 	PidginConversation *gtkconv;
 	GdkModifierType state;
@@ -97,7 +100,7 @@ static void
 unseen_conv_menu_cb(GtkMenuItem *item, PurpleConversation *conv)
 {
 	g_return_if_fail(conv != NULL);
-	pidgin_conv_present_conversation(conv);
+	docklet_conv_present_conversation(conv);
 }
 
 static void
@@ -107,13 +110,13 @@ unseen_all_conv_menu_cb(GtkMenuItem *item, GList *list)
 	/* Do not free the list from here. It will be freed from the
 	 * 'destroy' callback on the menuitem. */
 	while (list) {
-		pidgin_conv_present_conversation(list->data);
+		docklet_conv_present_conversation(list->data);
 		list = list->next;
 	}
 }
 
 guint
-pidgin_conversations_fill_menu(GtkWidget *menu, GList *convs)
+docklet_conversations_fill_menu(GtkWidget *menu, GList *convs)
 {
 	GList *l;
 	guint ret=0;

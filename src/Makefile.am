@@ -10,7 +10,8 @@ indicator_LTLIBRARIES = indicator.la
 
 indicator_la_SOURCES = \
 	pidgin-indicator.c \
-	gtkdocklet.c
+	gtkdocklet.c \
+	gtkconv.c
 
 indicator_la_LIBADD = \
 	$(BINRELOC_LIBS) \
