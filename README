@@ -19,6 +19,10 @@ but not in exactly the same way.
 * The 'smart' click behaviour that either shows the buddy list or unread
   messages is now activated by a middle-click - because left click on an
   indicator always opens the menu.
+* As the indicator is a separate process from pidgin itself, there are
+  sometimes conflicts with Focus Stealing Prevention when you use the
+  indicator to go to unread messages. You may need to disable FSP for
+  Pidgin to get around this.
 * Due to how indicators work, the middle-click action must also be a menu
   item, so it's the new Show/Hide item at the top of the menu.
 * Due to indicator limitations, some of the special icons can't be shown
