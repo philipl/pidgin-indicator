@@ -1,14 +1,14 @@
 pidgin-indicator: Ubuntu Indicator Plugin for Pidgin
 ====================================================
 
-0.6 (??):
+0.6 (2014-01-27):
 ---------
 
 * Fixed focusing of conversation tabs when going to
   unread conversations.
 * Enabled translations.
 
-0.5 (2014-01-14):
+0.5 (2014-01-19):
 -----------------
 
 Initial release.
