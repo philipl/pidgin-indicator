@@ -94,6 +94,15 @@ static struct indicator_docklet_ui_ops ui_ops =
   indicator_blank_icon,
 };
 
+static void
+indicator_build_menu(PurplePlugin *plugin, AppIndicator *indicator) {
+  GtkMenu *menu = GTK_MENU(docklet_menu());
+  GList *items = gtk_container_get_children(GTK_CONTAINER(menu));
+
+  app_indicator_set_menu(indicator, menu);
+  app_indicator_set_secondary_activate_target(indicator, GTK_WIDGET(items->data));
+}
+
 static gboolean
 indicator_load(PurplePlugin *plugin) {
   indicator_docklet_init(plugin, &ui_ops);
@@ -109,11 +118,12 @@ indicator_load(PurplePlugin *plugin) {
   indicator_update_icon(purple_savedstatus_get_type(purple_savedstatus_get_current()),
                         FALSE, FALSE);
 
-  GtkMenu *menu = GTK_MENU(docklet_menu());
-  GList *items = gtk_container_get_children(GTK_CONTAINER(menu));
-
-  app_indicator_set_menu(indicator, menu);
-  app_indicator_set_secondary_activate_target(indicator, GTK_WIDGET(items->data));
+  void *plugins_handle = purple_plugins_get_handle();
+  purple_signal_connect(plugins_handle, "plugin-load", plugin->handle,
+                        PURPLE_CALLBACK(indicator_build_menu), indicator);
+  purple_signal_connect(plugins_handle, "plugin-unload", plugin->handle,
+                        PURPLE_CALLBACK(indicator_build_menu), indicator);
+  indicator_build_menu(NULL, indicator);
 
   plugin->extra = indicator;
 
@@ -125,9 +135,11 @@ indicator_load(PurplePlugin *plugin) {
 static gboolean
 indicator_unload(PurplePlugin *plugin) {
   indicator_docklet_uninit(plugin);
+  purple_signals_disconnect_by_handle(plugin->handle);
 
   if (plugin->extra) {
     g_object_unref(G_OBJECT(plugin->extra));
+    plugin->extra = NULL;
   }
 
   pidgin_blist_visibility_manager_remove();
