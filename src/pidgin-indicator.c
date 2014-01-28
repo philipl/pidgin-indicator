@@ -46,11 +46,13 @@
 #include "docklet.h"
 
 static AppIndicator *sIndicator = NULL;
+static PurpleStatusPrimitive sStatus = PURPLE_STATUS_OFFLINE;
 
 static void
 indicator_update_icon(PurpleStatusPrimitive status, gboolean connecting, gboolean pending) {
         const gchar *icon_name = NULL;
 
+        sStatus = status;
         switch (status) {
                 case PURPLE_STATUS_OFFLINE:
                         icon_name = PIDGIN_STOCK_TRAY_OFFLINE;
@@ -83,7 +85,7 @@ indicator_update_icon(PurpleStatusPrimitive status, gboolean connecting, gboolea
 }
 
 static void indicator_blank_icon(void) {
-  app_indicator_set_icon(sIndicator, PIDGIN_STOCK_TRAY_AVAILABLE);
+  indicator_update_icon(sStatus, FALSE, FALSE);
 }
 
 static struct indicator_docklet_ui_ops ui_ops =
@@ -104,7 +106,8 @@ indicator_load(PurplePlugin *plugin) {
   sIndicator = indicator;
 
   app_indicator_set_status(indicator, APP_INDICATOR_STATUS_ACTIVE);
-  app_indicator_set_icon(indicator, PIDGIN_STOCK_TRAY_OFFLINE);
+  indicator_update_icon(purple_savedstatus_get_type(purple_savedstatus_get_current()),
+                        FALSE, FALSE);
 
   GtkMenu *menu = GTK_MENU(docklet_menu());
   GList *items = gtk_container_get_children(GTK_CONTAINER(menu));
