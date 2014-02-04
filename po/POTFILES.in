@@ -1,2 +1,3 @@
+src/gtkconv.c
 src/gtkdocklet.c
 src/pidgin-indicator.c

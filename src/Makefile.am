@@ -10,6 +10,7 @@ indicator_LTLIBRARIES = indicator.la
 
 indicator_la_SOURCES = \
 	pidgin-indicator.c \
+	docklet.h \
 	gtkdocklet.c \
 	gtkconv.c
 
