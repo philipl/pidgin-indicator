@@ -3,7 +3,7 @@
 # pidgin-encryption configure script, thanks guys ;)
 #
 
-AC_INIT([pidgin-indicator], [0.6], [philipl@overt.org])
+AC_INIT([pidgin-indicator], [0.7], [philipl@overt.org])
 AC_CANONICAL_SYSTEM
 AM_CONFIG_HEADER(config.h)
 

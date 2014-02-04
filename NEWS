@@ -1,8 +1,14 @@
 pidgin-indicator: Ubuntu Indicator Plugin for Pidgin
 ====================================================
 
+0.7 (2014-02-04):
+-----------------
+
+* Improved handling of status icon state
+* Menu is now rebuilt when Plugin Actions change
+
 0.6 (2014-01-27):
----------
+-----------------
 
 * Fixed focusing of conversation tabs when going to
   unread conversations.
