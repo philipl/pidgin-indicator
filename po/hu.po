@@ -1,0 +1,111 @@
+# Hungarian translations for pidgin-indicator package.
+# Copyright (C) 2014 Listed translators
+# This file is distributed under the same license as the pidgin-indicator package.
+# Márk Sági-Kazár <mark.sagikazar@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pidgin-indicator\n"
+"Report-Msgid-Bugs-To: Philip Langdale <philipl@overt.org>\n"
+"POT-Creation-Date: 2014-02-20 12:46+0100\n"
+"PO-Revision-Date: 2014-02-20 12:56+0100\n"
+"Last-Translator: Sági-Kazár Márk <mark.sagikazar@gmail.com>\n"
+"Language-Team: \n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../src/gtkconv.c:149
+msgid "Show All"
+msgstr "Mindent mutat"
+
+#: ../src/gtkdocklet.c:550
+msgid "Available"
+msgstr "Elérhető"
+
+#: ../src/gtkdocklet.c:554
+msgid "Away"
+msgstr "Távol"
+
+#: ../src/gtkdocklet.c:558
+msgid "Do not disturb"
+msgstr "Ne zavarjanak"
+
+#: ../src/gtkdocklet.c:562
+msgid "Invisible"
+msgstr "Láthatatlan"
+
+#: ../src/gtkdocklet.c:566
+msgid "Offline"
+msgstr "Kilépett"
+
+#: ../src/gtkdocklet.c:587
+msgid "New..."
+msgstr "Új..."
+
+#: ../src/gtkdocklet.c:588
+msgid "Saved..."
+msgstr "Mentve..."
+
+#: ../src/gtkdocklet.c:704
+msgid "_Show/Hide"
+msgstr "_Mutat/Elrejt"
+
+#: ../src/gtkdocklet.c:710
+msgid "Show Buddy _List"
+msgstr "_Partnerlista megjelenítése"
+
+#: ../src/gtkdocklet.c:716
+msgid "_Unread Messages"
+msgstr "_Olvasatlan üzenetek"
+
+#: ../src/gtkdocklet.c:723
+msgid "New _Message..."
+msgstr "Új azonnal_i üzenet"
+
+#: ../src/gtkdocklet.c:730
+msgid "Join Chat..."
+msgstr "_Csatlakozás csevegéshez..."
+
+#: ../src/gtkdocklet.c:737
+msgid "_Change Status"
+msgstr "_Státusz módosítása"
+
+#: ../src/gtkdocklet.c:744
+msgid "_Accounts"
+msgstr "_Fiókok"
+
+#: ../src/gtkdocklet.c:745
+msgid "Plu_gins"
+msgstr "_Bővítmények"
+
+#: ../src/gtkdocklet.c:746
+msgid "Pr_eferences"
+msgstr "B_eállítások"
+
+#: ../src/gtkdocklet.c:750
+msgid "Mute _Sounds"
+msgstr "_Hangok némítása"
+
+#: ../src/gtkdocklet.c:758
+msgid "_Blink on New Message"
+msgstr "_Villogjon új üzeneteknél"
+
+#: ../src/gtkdocklet.c:770
+msgid "_Quit"
+msgstr "_Kilépés"
+
+#: ../src/pidgin-indicator.c:181
+msgid "Ubuntu Indicator"
+msgstr "Ubuntu Indikátor"
+
+#: ../src/pidgin-indicator.c:182
+msgid "Indicator icon for Ubuntu Unity"
+msgstr "Indikátor ikon Ubuntu Unity-hez"
+
+#: ../src/pidgin-indicator.c:183
+msgid "Show a Unity Indicator icon in Ubuntu"
+msgstr "Mutasd a Unity indikátor ikont"
