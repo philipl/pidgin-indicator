@@ -1,7 +1,7 @@
 # Simplified Chinese translations for pidgin-indicator package.
 # Copyright (C) 2014 Listed translators
 # This file is distributed under the same license as the pidgin-indicator package.
-# Christian Schendel <loveayawaka at gmail dot com>, 2015.
+# maz-1 <loveayawaka at gmail dot com>, 2015.
 #
 msgid ""
 msgstr ""
