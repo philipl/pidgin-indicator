@@ -1,14 +1,14 @@
-# German translations for pidgin-indicator package.
+# Simplified Chinese translations for pidgin-indicator package.
 # Copyright (C) 2014 Listed translators
 # This file is distributed under the same license as the pidgin-indicator package.
-# Christian Schendel <doppelhelix@gmail.com>, 2014.
+# Christian Schendel <loveayawaka at gmail dot com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pidgin-indicator\n"
 "Report-Msgid-Bugs-To: Philip Langdale <philipl@overt.org>\n"
-"POT-Creation-Date: 2014-01-22 12:20+0100\n"
-"PO-Revision-Date: 2014-01-22 12:42+0100\n"
+"POT-Creation-Date: 2015-02-01 12:20+0100\n"
+"PO-Revision-Date: 2015-02-01 12:42+0100\n"
 "Last-Translator: maz-1 <loveayawaka at gmail dot com>\n"
 "Language-Team: \n"
 "Language: de\n"
