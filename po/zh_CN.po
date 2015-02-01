@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Philip Langdale <philipl@overt.org>\n"
 "POT-Creation-Date: 2014-01-22 12:20+0100\n"
 "PO-Revision-Date: 2014-01-22 12:42+0100\n"
-"Last-Translator: Christian Schendel <doppelhelix@gmail.com>\n"
+"Last-Translator: maz-1 <loveayawaka at gmail dot com>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -47,19 +47,19 @@ msgstr "已保存..."
 
 #: ../src/gtkdocklet.c:704
 msgid "_Show/Hide"
-msgstr "显示/隐藏"
+msgstr "显示/隐藏(_S)"
 
 #: ../src/gtkdocklet.c:710
 msgid "Show Buddy _List"
-msgstr "显示 好友列表"
+msgstr "显示 好友列表(_L)"
 
 #: ../src/gtkdocklet.c:716
 msgid "_Unread Messages"
-msgstr "未读消息"
+msgstr "未读消息(_U)"
 
 #: ../src/gtkdocklet.c:723
 msgid "New _Message..."
-msgstr "新消息..."
+msgstr "新消息...(_M)"
 
 #: ../src/gtkdocklet.c:730
 msgid "Join Chat..."
@@ -67,28 +67,28 @@ msgstr "加入聊天"
 
 #: ../src/gtkdocklet.c:737
 msgid "_Change Status"
-msgstr "改变状态"
+msgstr "改变状态(_C)"
 
 #: ../src/gtkdocklet.c:744
 msgid "_Accounts"
-msgstr "账户"
+msgstr "账户(_A)"
 
 #: ../src/gtkdocklet.c:745
 msgid "Plu_gins"
-msgstr "插件"
+msgstr "插件(_G)"
 
 #: ../src/gtkdocklet.c:746
 msgid "Pr_eferences"
-msgstr "偏好设置"
+msgstr "偏好设置(_E)"
 
 #: ../src/gtkdocklet.c:750
 msgid "Mute _Sounds"
-msgstr "静音"
+msgstr "静音(_S)"
 
 #: ../src/gtkdocklet.c:758
 msgid "_Blink on New Message"
-msgstr "有新消息时闪烁"
+msgstr "有新消息时闪烁(_B)"
 
 #: ../src/gtkdocklet.c:770
 msgid "_Quit"
-msgstr "退出"
+msgstr "退出(_Q)"
