@@ -1,0 +1,94 @@
+# German translations for pidgin-indicator package.
+# Copyright (C) 2014 Listed translators
+# This file is distributed under the same license as the pidgin-indicator package.
+# Christian Schendel <doppelhelix@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pidgin-indicator\n"
+"Report-Msgid-Bugs-To: Philip Langdale <philipl@overt.org>\n"
+"POT-Creation-Date: 2014-01-22 12:20+0100\n"
+"PO-Revision-Date: 2014-01-22 12:42+0100\n"
+"Last-Translator: Christian Schendel <doppelhelix@gmail.com>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/gtkdocklet.c:550
+msgid "Available"
+msgstr "在线"
+
+#: ../src/gtkdocklet.c:554
+msgid "Away"
+msgstr "离开"
+
+#: ../src/gtkdocklet.c:558
+msgid "Do not disturb"
+msgstr "请勿打扰"
+
+#: ../src/gtkdocklet.c:562
+msgid "Invisible"
+msgstr "隐身"
+
+#: ../src/gtkdocklet.c:566
+msgid "Offline"
+msgstr "离线"
+
+#: ../src/gtkdocklet.c:587
+msgid "New..."
+msgstr "新建..."
+
+#: ../src/gtkdocklet.c:588
+msgid "Saved..."
+msgstr "已保存..."
+
+#: ../src/gtkdocklet.c:704
+msgid "_Show/Hide"
+msgstr "显示/隐藏"
+
+#: ../src/gtkdocklet.c:710
+msgid "Show Buddy _List"
+msgstr "显示 好友列表"
+
+#: ../src/gtkdocklet.c:716
+msgid "_Unread Messages"
+msgstr "未读消息"
+
+#: ../src/gtkdocklet.c:723
+msgid "New _Message..."
+msgstr "新消息..."
+
+#: ../src/gtkdocklet.c:730
+msgid "Join Chat..."
+msgstr "加入聊天"
+
+#: ../src/gtkdocklet.c:737
+msgid "_Change Status"
+msgstr "改变状态"
+
+#: ../src/gtkdocklet.c:744
+msgid "_Accounts"
+msgstr "账户"
+
+#: ../src/gtkdocklet.c:745
+msgid "Plu_gins"
+msgstr "插件"
+
+#: ../src/gtkdocklet.c:746
+msgid "Pr_eferences"
+msgstr "偏好设置"
+
+#: ../src/gtkdocklet.c:750
+msgid "Mute _Sounds"
+msgstr "静音"
+
+#: ../src/gtkdocklet.c:758
+msgid "_Blink on New Message"
+msgstr "有新消息时闪烁"
+
+#: ../src/gtkdocklet.c:770
+msgid "_Quit"
+msgstr "退出"
