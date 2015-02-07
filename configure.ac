@@ -111,5 +111,6 @@ AM_CONDITIONAL(PLUGINS, test "$want_plugins" = "yes")
 #
 AC_OUTPUT([Makefile
 	   po/Makefile.in
+	   icons/Makefile
 	   src/Makefile
 	  ])

@@ -85,7 +85,7 @@ indicator_update_icon(PurpleStatusPrimitive status, gboolean connecting, gboolea
 }
 
 static void indicator_blank_icon(void) {
-  indicator_update_icon(sStatus, FALSE, FALSE);
+    app_indicator_set_icon(sIndicator, "pidgin-indicator-nothing");
 }
 
 static struct indicator_docklet_ui_ops ui_ops =
