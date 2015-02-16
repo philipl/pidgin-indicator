@@ -1,0 +1,96 @@
+# Russian translations for pidgin-indicator package.
+# Copyright (C) 2014 Listed translators
+# This file is distributed under the same license as the pidgin-indicator package.
+# Alexey aka Doctor Rover <drlobraf@gmail.com>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pidgin-indicator\n"
+"Report-Msgid-Bugs-To: Philip Langdale <philipl@overt.org>\n"
+"POT-Creation-Date: 2014-01-22 12:20+0100\n"
+"PO-Revision-Date: 2015-02-10 13:32+0300\n"
+"Last-Translator: Doctor Rover <drlobraf@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../src/gtkdocklet.c:550
+msgid "Available"
+msgstr "Доступен"
+
+#: ../src/gtkdocklet.c:554
+msgid "Away"
+msgstr "Отошёл"
+
+#: ../src/gtkdocklet.c:558
+msgid "Do not disturb"
+msgstr "Не беспокоить"
+
+#: ../src/gtkdocklet.c:562
+msgid "Invisible"
+msgstr "Невидимый"
+
+#: ../src/gtkdocklet.c:566
+msgid "Offline"
+msgstr "Не в сети"
+
+#: ../src/gtkdocklet.c:587
+msgid "New..."
+msgstr "Новый..."
+
+#: ../src/gtkdocklet.c:588
+msgid "Saved..."
+msgstr "Сохранённый..."
+
+#: ../src/gtkdocklet.c:704
+msgid "_Show/Hide"
+msgstr "По_казать или скрыть"
+
+#: ../src/gtkdocklet.c:710
+msgid "Show Buddy _List"
+msgstr "Показать список _собеседников"
+
+#: ../src/gtkdocklet.c:716
+msgid "_Unread Messages"
+msgstr "Неп_рочитанные сообщения"
+
+#: ../src/gtkdocklet.c:723
+msgid "New _Message..."
+msgstr "Но_вое сообщение..."
+
+#: ../src/gtkdocklet.c:730
+msgid "Join Chat..."
+msgstr "Присоединиться к _чату..."
+
+#: ../src/gtkdocklet.c:737
+msgid "_Change Status"
+msgstr "_Изменить статус"
+
+#: ../src/gtkdocklet.c:744
+msgid "_Accounts"
+msgstr "_Учётные записи"
+
+#: ../src/gtkdocklet.c:745
+msgid "Plu_gins"
+msgstr "_Модули"
+
+#: ../src/gtkdocklet.c:746
+msgid "Pr_eferences"
+msgstr "_Настройки"
+
+#: ../src/gtkdocklet.c:750
+msgid "Mute _Sounds"
+msgstr "Отключить _звуки"
+
+#: ../src/gtkdocklet.c:758
+msgid "_Blink on New Message"
+msgstr "Мер_цать при наличии нового сообщения"
+
+#: ../src/gtkdocklet.c:770
+msgid "_Quit"
+msgstr "Вы_йти"
