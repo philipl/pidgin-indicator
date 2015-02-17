@@ -37,7 +37,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, ["$GETTEXT_PACKAGE"], [Define the gettext package to be used.])
 
 #ALL_LINGUAS="bn cs de en_AU en_GB es fr gl he hu it ja mk nl no pt pt_BR ru sk sr sr@Latn sv uk zh_CN zh_TW"
-ALL_LINGUAS="de hu zh_CN"
+ALL_LINGUAS="de hu ru zh_CN"
 AM_GLIB_GNU_GETTEXT
 
 #
