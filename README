@@ -17,8 +17,14 @@ The indicator provides all the same functionality as the original tray icon,
 but not in exactly the same way.
 
 * The 'smart' click behaviour that either shows the buddy list or unread
-  messages is now activated by a middle-click - because left click on an
-  indicator always opens the menu.
+  messages is now activated by a middle-click.
+  * This is because indicators do not get to control what happens on clicks.
+    An indicator can register a 'secondary action' which takes place on a
+    middle-click but nothing else.
+  * The left/right click behaviour is completely up to the desktop environment.
+    * Unity shows the menu on both left and right click.
+    * KDE shows the menu on right click and does nothing on left click.
+    * I've not investigated what the GNOME indicator plugin does.
 * As the indicator is a separate process from pidgin itself, there are
   sometimes conflicts with Focus Stealing Prevention when you use the
   indicator to go to unread messages. You may need to disable FSP for
