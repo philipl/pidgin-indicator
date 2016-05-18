@@ -1,7 +1,7 @@
-# German translations for pidgin-indicator package.
+# Spanish translations for pidgin-indicator package.
 # Copyright (C) 2014 Listed translators
 # This file is distributed under the same license as the pidgin-indicator package.
-# Christian Schendel <doppelhelix@gmail.com>, 2014.
+# Juan A. S. <okelet@gmail.com>, 2016.
 #
 msgid ""
 msgstr ""
