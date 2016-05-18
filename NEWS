@@ -1,6 +1,12 @@
 pidgin-indicator: Ubuntu Indicator Plugin for Pidgin
 ====================================================
 
+1.0 (2016-05-18):
+
+* Add Russian translation.
+* Add Spanish translation.
+* Add links to package repositories.
+
 0.9 (2015-02-06):
 
 * Implemented proper blinking notification for status icon.
