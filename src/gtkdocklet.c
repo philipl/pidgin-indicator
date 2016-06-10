@@ -133,7 +133,7 @@ get_pending_list(guint max)
 static void
 docklet_build_unread(GtkWidget *menuitem) {
 	if (pending) {
-		g_print("Building unread menu\n");
+		purple_debug_misc("docklet", "Building unread menu");
 		GList *l = get_pending_list(0);
 		if (l == NULL) {
 			gtk_widget_set_sensitive(menuitem, FALSE);
@@ -149,7 +149,7 @@ docklet_build_unread(GtkWidget *menuitem) {
 			gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), submenu);
 		}
 	} else {
-		g_print("No unread menu\n");
+		purple_debug_misc("docklet", "No unread menu");
 		gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), NULL);
 		gtk_widget_set_sensitive(menuitem, FALSE);
 	}
