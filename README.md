@@ -17,19 +17,23 @@ The indicator provides all the same functionality as the original tray icon,
 but not in exactly the same way.
 
 * The 'smart' click behaviour that either shows the buddy list or unread
-  messages is now activated by a middle-click.
+  messages is mapped to the appindicator 'secondary action'.
   * This is because indicators do not get to control what happens on clicks.
-    An indicator can register a 'secondary action' which takes place on a
-    middle-click but nothing else.
-  * The left/right click behaviour is completely up to the desktop environment.
-    * Unity shows the menu on both left and right click.
-    * KDE shows the menu on right click and does nothing on left click.
-    * I've not investigated what the GNOME indicator plugin does.
+    The 'secondary action' is intended to be something done instead of showing
+    the menu. It is up to the indicator provider in the destkop environment
+    to decide what action triggers the secondary action, if at all.
+  * In Unity, a middle-click triggers the secondary action
+  * In nome-shell using the AppIndicator/KStatusNotifierItem extension,
+    very recent versions now support the same middle-click behaviour as in
+    Unity. This extension is installed by default with Ubuntu 17.10.
+  * I'm not sure what KDE Plasma does. Some people have said it also
+    does secondary activation on a middle click, and some say a left click.
+    I think this may have changed over successive releases.
 * As the indicator is a separate process from pidgin itself, there are
   sometimes conflicts with Focus Stealing Prevention when you use the
   indicator to go to unread messages. You may need to disable FSP for
   Pidgin to get around this.
-* Due to how indicators work, the middle-click action must also be a menu
+* Due to how indicators work, the secondary action must also be a menu
   item, so it's the new Show/Hide item at the top of the menu.
 * Due to indicator limitations, some of the special icons can't be shown
   next to menu items any more.
