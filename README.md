@@ -1,14 +1,23 @@
-pidgin-indicator: Ubuntu Indicator Plugin for Pidgin
-====================================================
+pidgin-indicator: AppIndicator/KStatusNotifierItem Plugin for Pidgin
+====================================================================
 
-This plugin provides an Ubuntu Indicator icon, for use in the Unity desktop
-environment. Unity no longer provides a general purpose notification tray,
-so the standard Pidgin tray icon does not appear. The official Ubuntu
-alternative is an integration with their Messaging indicator, which
-consolidates status from multiple applications. I've found this indicator to
-be much less usable than the original Pidgin tray icon, so I decided to
-build this plugin to restore the icon's functionality in a maintainable
-way (in contrast to having to run a patched version of Unity).
+This plugins provides an AppIndicator/KStatusNotifierItem for pidgin. All
+the current desktop environments are moving away from XEmbed based systray
+icons, and that is the only kind of icon that Pidigin provides out of the
+box.
+
+Ubuntu Unity (now deprecated) and KDE Plasma provide native support for
+AppIndicators/KStatusNotifierItems, and a gnome-shell extension provides
+support in GNOME (and this extension is installed by default in Ubuntu
+starting in 17.10).
+
+I originally developed this plugin when Ubuntu Unity dropped support for
+legacy systray icons and I found the official alternative - their Messaging
+indicator - to be inadequate. It consolidated status from multiple
+applications, and I found it to be much less usable than the original Pidgin
+tray icon. Ultimately, with the move from Unity to GNOME in Ubuntu, this
+Messaging indicator has been deprecated so there's even more reason for
+this plugin to exist.
 
 Functionality
 -------------
@@ -23,7 +32,7 @@ but not in exactly the same way.
     the menu. It is up to the indicator provider in the destkop environment
     to decide what action triggers the secondary action, if at all.
   * In Unity, a middle-click triggers the secondary action
-  * In nome-shell using the AppIndicator/KStatusNotifierItem extension,
+  * In gnome-shell using the AppIndicator/KStatusNotifierItem extension,
     very recent versions now support the same middle-click behaviour as in
     Unity. This extension is installed by default with Ubuntu 17.10.
   * I'm not sure what KDE Plasma does. Some people have said it also
