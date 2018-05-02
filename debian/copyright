@@ -1,0 +1,29 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pidgin-indicator
+Upstream-Contact: Philip Langdale <philipl@overt.org>
+Source: https://github.com/philipl/pidgin-indicator
+
+Files: *
+Copyright: Copyright 2016 Philip Langdale <philipl@overt.org>
+License: LGPL-2
+ pidgin-indicator is free software: you can redistribute it and/or modify
+ it under the terms of version 2 of the GNU Lesser General Public
+ License as published by the Free Software Foundation.
+ .
+ pidgin-indicator is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/LGPL-2'.
+
+Files: debian/*
+Copyright: Copyright 2016 Alin Andrei <andrew@webupd8.org>
+License: LGPL-2
+ Same license as pidgin-indicator.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/LGPL-2'.

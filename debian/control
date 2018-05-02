@@ -1,0 +1,21 @@
+Source: pidgin-indicator
+Section: net
+Priority: extra
+Maintainer: Alin Andrei <webupd8@gmail.com>
+Standards-Version: 3.9.7
+Build-Depends: debhelper (>= 9), intltool, pidgin-dev (>= 2.10.0), libappindicator-dev
+Homepage: https://github.com/philipl/pidgin-indicator
+
+Package: pidgin-indicator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Ubuntu Indicator Plugin for Pidgin
+ .
+ This plugin provides an Ubuntu Indicator icon, for use in the Unity desktop
+ environment. Unity no longer provides a general purpose notification tray,
+ so the standard Pidgin tray icon does not appear. The official Ubuntu
+ alternative is an integration with their Messaging indicator, which
+ consolidates status from multiple applications. I've found this indicator to
+ be much less usable than the original Pidgin tray icon, so I decided to
+ build this plugin to restore the icon's functionality in a maintainable
+ way (in constrat to having to run a patched version of Unity).

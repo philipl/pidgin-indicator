@@ -1,0 +1,58 @@
+pidgin-indicator (1.0-1~webupd8~zesty0) zesty; urgency=medium
+
+  * Upload for Zesty
+
+ -- Alin Andrei <andrew@webupd8.org>  Mon, 20 Mar 2017 16:10:44 +0200
+
+pidgin-indicator (1.0-1~webupd8~yakkety0) yakkety; urgency=medium
+
+  * Upload for Yakkety
+
+ -- Alin Andrei <webupd8@gmail.com>  Fri, 10 Jun 2016 09:58:17 +0200
+
+pidgin-indicator (1.0-1~webupd8~precise0) precise; urgency=medium
+
+  * New upstream release
+  * Bump standards-version to 3.9.7
+
+ -- Alin Andrei <webupd8@gmail.com>  Fri, 10 Jun 2016 09:58:17 +0200
+
+pidgin-indicator (0.9-1~webupd8~xenial0) xenial; urgency=medium
+
+  * New upstream release
+
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 10 Feb 2015 16:21:32 +0200
+
+pidgin-indicator (0.8-1~webupd8~utopic0) utopic; urgency=medium
+
+  * New upstream release
+
+ -- Alin Andrei <webupd8@gmail.com>  Mon, 22 Sep 2014 10:50:31 +0200
+
+pidgin-indicator (0.7-1~webupd8~utopic0) utopic; urgency=medium
+
+  * Upload for Utopic
+
+ -- Alin Andrei <webupd8@gmail.com>  Thu, 11 Sep 2014 11:27:49 +0200
+
+pidgin-indicator (0.7-1~webupd8~trusty0) trusty; urgency=medium
+
+  * New upstream release:
+  * Improved handling of status icon state
+  * Menu is now rebuilt when Plugin Actions change
+
+ -- Alin Andrei <webupd8@gmail.com>  Wed, 05 Feb 2014 13:23:41 +0200
+
+pidgin-indicator (0.6-1~webupd8~trusty0) trusty; urgency=medium
+
+  * New upstream release:
+  * Fixed focusing of conversation tabs when going to unread conversations.
+  * Enabled translations.
+
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 28 Jan 2014 13:23:41 +0200
+
+pidgin-indicator (0.5-1~webupd8~precise2) precise; urgency=medium
+
+  * initial debianization
+
+ -- Alin Andrei <webupd8@gmail.com>  Mon, 20 Jan 2014 13:23:41 +0200
