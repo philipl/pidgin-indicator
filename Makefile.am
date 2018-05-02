@@ -3,7 +3,7 @@ EXTRA_DIST = \
 	COPYING \
 	INSTALL \
 	NEWS \
-	README
+	README.md
 
 SUBDIRS = icons src po
 

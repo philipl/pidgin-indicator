@@ -1,3 +1,9 @@
+pidgin-indicator (1.0.1-1) bionic; urgency=medium
+
+  * First upstream packaged release
+
+ -- Philip Langdale <philipl@overt.org>  Wed, 2 May 2018 10:38:23 -0700
+
 pidgin-indicator (1.0-1~webupd8~zesty0) zesty; urgency=medium
 
   * Upload for Zesty

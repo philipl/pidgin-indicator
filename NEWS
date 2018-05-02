@@ -1,6 +1,12 @@
 pidgin-indicator: Ubuntu Indicator Plugin for Pidgin
 ====================================================
 
+1.0.1 (2018-05-02):
+
+* Reduce logging spam.
+* Update README.
+* Bring debian build files into the tree.
+
 1.0 (2016-05-18):
 
 * Add Russian translation.
