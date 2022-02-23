@@ -3,7 +3,7 @@ Section: net
 Priority: optional
 Maintainer: Philip Langdale <philipl@overt.org>
 Standards-Version: 3.9.7
-Build-Depends: debhelper (>= 9), intltool, pidgin-dev (>= 2.10.0), libappindicator-dev
+Build-Depends: debhelper (>= 9), intltool, pidgin-dev (>= 2.10.0), libayatana-appindicator3-dev | libappindicator-dev
 Homepage: https://github.com/philipl/pidgin-indicator
 
 Package: pidgin-indicator
