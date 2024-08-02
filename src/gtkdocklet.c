@@ -50,6 +50,8 @@
 
 #include "docklet.h"
 
+#include <libpurple/debug.h>
+
 #ifndef DOCKLET_TOOLTIP_LINE_LIMIT
 #define DOCKLET_TOOLTIP_LINE_LIMIT 5
 #endif
