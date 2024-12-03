@@ -1,6 +1,11 @@
 pidgin-indicator: Ubuntu Indicator Plugin for Pidgin
 ====================================================
 
+1.0.2 (2024-12-02):
+
+* Support gcc-14
+* Support ayanta-appindicators
+
 1.0.1 (2018-05-02):
 
 * Reduce logging spam.
